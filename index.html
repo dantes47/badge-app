@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello World</title>
+    <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+
+    <!-- Don't use this in production: -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+        html {
+            background: darkgrey;
+        }
+        .car {
+            text-align: center;
+            font-family: "Comic Sans MS";
+            display: inline-block;
+            border: 1px solid coral;
+            border-radius: 4px;
+            box-shadow: 1px 1px 2px brown;
+            background: cadetblue;
+            padding: 10px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="root"></div>
+
+<!--<div class="car">-->
+<!--    <h3>Porsche Classic</h3>-->
+<!--    <p>Year: <strong>1965</strong></p>-->
+<!--</div>-->
+
+<!--<div class="car">-->
+<!--    <h3>Ford GT</h3>-->
+<!--    <p>Year: <strong>1969</strong></p>-->
+<!--</div>-->
+
+<!--<div class="car">-->
+<!--    <h3>Jaguar C-Type</h3>-->
+<!--    <p>Year: <strong>1955</strong></p>-->
+<!--</div>-->
+
+<script type="text/babel">
+
+    function Car(props) {
+        return (
+            <div className="car">
+                <h3>{props.name}</h3>
+                <p>Year: <strong>{props.year}</strong></p>
+            </div>
+        )
+    };
+
+    const App = (
+        <div>
+            <Car name="Porsche Classic" year="1965" />
+            <Car name="Ford GT" year="1969" />
+            <Car name="Jaguar C-Type" year="1955" />
+        </div>
+    )
+
+    ReactDOM.render(
+            App,
+        document.getElementById('root')
+    )
+
+</script>
+
+</body>
+</html>
